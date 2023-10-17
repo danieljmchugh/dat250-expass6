@@ -1,0 +1,27 @@
+<div>
+  <h2>Todo List</h2>
+
+  <!-- Display the list of todos -->
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Summary</th>
+      <th>Description</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let todo of todos">
+      <td>{{ todo.id }}</td>
+      <td>{{ todo.summary }}</td>
+      <td>{{ todo.description }}</td>
+      <td><button (click)="deleteTodo(todo.id)"></button></td>
+    </tr>
+  </table>
+
+  <button (click)="retrieveTodos()">Refresh</button>
+  <br>
+  <input [(ngModel)]="newTodo.description" type="text">
+  <input [(ngModel)]="newTodo.summary" type="text">
+  <button (click)="postTodo()">Post</button>
+  <!-- You can add a form to create new todos here -->
+</div>
+
